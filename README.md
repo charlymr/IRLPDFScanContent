@@ -1,5 +1,5 @@
 # IRLPDFScanContent
-`SwiftUI` & `UKKit` - Images or PDF scanner.
+Super easy `SwiftUI` & `UKKit` pakcage to scan: Images or PDF.
 
 [![🍎 Documentation](https://raw.githubusercontent.com/charlymr/IRLPDFScanContent/main/documentationicon.png)](https://irlpdfscancontent.irlmobile.com/documentation/) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=charlymr_IRLPDFScanContent&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=charlymr_IRLPDFScanContent) [![Version](https://img.shields.io/cocoapods/v/IRLPDFScanContent.svg?style=flat)](http://cocoapods.org/pods/IRLPDFScanContent) [![Platform](https://img.shields.io/cocoapods/p/IRLPDFScanContent.svg?style=flat)](http://cocoapods.org/pods/IRLPDFScanContent) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![licence MIT](https://shields.io/badge/license-MIT-%23373737)](https://github.com/charlymr/IRLPDFScanContent/blob/main/LICENSE)
