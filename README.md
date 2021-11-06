@@ -39,6 +39,13 @@ let package = Package(
 )
 ```
 
+## [Getting started](https://irlpdfscancontent.irlmobile.com) 
+
+IRLPDFScanContent is a convenient way to use PDFKit in SwiftUI allowing the user to scan multiple pages and creating a PDF for you.
+This tutorial guides you through building adding this functionality to a SwiftUI view. You will learn to build the view and hanlde the user input.
+
+Chech the documentation (Essentials / Getting Started) here: [Documentation](https://irlpdfscancontent.irlmobile.com/tutorials/tutorial-table-of-contents)
+
 #### Make it availble globaly
 
 - In your `AppDelegate` or your Module, use `@_exported` for convenience
@@ -48,10 +55,10 @@ let package = Package(
 
 ### Perfrom a Scan
 
-- Initiate the object with [`init(with:)`](https://irlpdfscancontent.irlmobile.com/documentation/irlpdfscancontent/irlpdfscancontent/init(with:)) (You may pass a delegate (`IRLPDFScanContentProtocol`) or observe changes
-- present you view [`present(animated:completion:)`](https://irlpdfscancontent.irlmobile.com/documentation/irlpdfscancontent/irlpdfscancontent/present(animated:completion:)) or [`await present(animated:)`](https://irlpdfscancontent.irlmobile.com/documentation/irlpdfscancontent/irlpdfscancontent/present(animated:)) (iOS 15.0+)
-- Observe the result of [`latestScan`](https://irlpdfscancontent.irlmobile.com/documentation/irlpdfscancontent/irlpdfscancontent/latestscan)) or wait for `delegate` if you used the delegate method
-- Generate a PDF using [`generatePDF(with:)`](https://irlpdfscancontent.irlmobile.com/documentation/irlpdfscancontent/irlpdfscancontent/generatepdf(with:)) or get images using `scanImages`
+- Initiate the object with [`init(with:)`](https://irlpdfscancontent.irlmobile.com) (You may pass a delegate (`IRLPDFScanContentProtocol`) or observe changes
+- present you view [`present(animated:completion:)`](https://irlpdfscancontent.irlmobile.com) or [`await present(animated:)`](https://irlpdfscancontent.irlmobile.com) (iOS 15.0+)
+- Observe the result of [`latestScan`](https://irlpdfscancontent.irlmobile.com) or wait for `delegate` if you used the delegate method
+- Generate a PDF using [`generatePDF(with:)`](https://irlpdfscancontent.irlmobile.com) or get images using `scanImages`
 
 ``` swift
 let scanner = IRLPDFScanContent(with: self)
