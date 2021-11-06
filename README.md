@@ -5,7 +5,8 @@ A convenient class usable from `UIKit` view controller or `SwiftUI` to scan docu
 
 ## Overview
 
-Use this class in to perform a scan an get images or a PDF as result
+Use this class in to perform a scan and get images or a PDF as result.
+
 **MINIMUM iOS REQUIREMENT: 13.0**
 
 ## Application plist requirement
