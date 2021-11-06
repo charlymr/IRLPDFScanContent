@@ -1,11 +1,11 @@
 # IRLPDFScanContent
-A convenient class usable from `UIKit` view controller or `SwiftUI` to scan document & get `UIImage` or `PDFDocument` as result
+`SwiftUI` & `UKKit` - Images or PDF scanner.
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=charlymr_IRLPDFScanContent&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=charlymr_IRLPDFScanContent) [![🍎 Documentation](https://raw.githubusercontent.com/charlymr/IRLPDFScanContent/main/documentationicon.png)](https://irlpdfscancontent.irlmobile.com/documentation/)
+[![🍎 Documentation](https://raw.githubusercontent.com/charlymr/IRLPDFScanContent/main/documentationicon.png)](https://irlpdfscancontent.irlmobile.com/documentation/) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=charlymr_IRLPDFScanContent&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=charlymr_IRLPDFScanContent) [![Version](https://img.shields.io/cocoapods/v/IRLPDFScanContent.svg?style=flat)](http://cocoapods.org/pods/IRLPDFScanContent) [![Platform](https://img.shields.io/cocoapods/p/IRLPDFScanContent.svg?style=flat)](http://cocoapods.org/pods/IRLPDFScanContent)
 
 ## Overview
 
-Use this class in to perform a scan and get images or a PDF as result.
+A convenient class usable from `UIKit` view controller or `SwiftUI` to scan document & get `UIImage` or `PDFDocument` as result
 
 **MINIMUM iOS REQUIREMENT: 13.0**
 
@@ -17,7 +17,8 @@ Please add the following to your plist:
 
 ## Usage
 
-### Add the Package to your project, min version ``5.5`` if you want to build the documentation
+### via Swift Package Manager
+
 Add the Package to your project, min version `5.5`, See [Apple Documentation](https://developer.apple.com/documentation/swift_packages/adding_package_dependencies_to_your_app).
 
 ```swift
@@ -42,6 +43,55 @@ let package = Package(
     ]
 )
 ```
+
+### via CocoaPods
+
+Install CocoaPods if not already available:
+
+``` bash
+$ [sudo] gem install cocoapods
+$ pod setup
+```
+
+Change to the directory of your Xcode project, and Create and Edit your Podfile and add IRLPDFScanContent:
+
+``` bash
+$ cd /path/to/MyProject
+$ touch Podfile
+$ edit Podfile
+
+platform :ios, '13.0'
+
+target "YOUR APP" do
+pod 'IRLPDFScanContent'
+use_frameworks!
+end
+
+```
+
+### via Carthage
+
+Install [Carthage](https://github.com/Carthage/Carthage#installing-carthage) if not already available 
+
+Change to the directory of your Xcode project, and Create and Edit your Podfile and add IRLPDFScanContent:
+
+``` bash
+$ cd /path/to/MyProject
+$ touch CartFile
+$ edit CartFile
+
+github "charlymr/IRLPDFScanContent" ~> 1.0.0
+```
+
+Save and run:
+``` bash
+$ carthage update
+```
+Drop the Carthage/Build/iOS .framework in your project.
+
+For more details on Cartage and how to use it, check the [Carthage Github](https://github.com/Carthage/Carthage) documentation
+
+
 
 ## [Getting started](https://irlpdfscancontent.irlmobile.com) 
 
