@@ -14,9 +14,10 @@ As of iOS 10, you must povide a reason for using the camera in you Info.plist:
 Please add the following to your plist:
 **[NSCameraUsageDescription](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) : We need the camera to scan**
 
-## Usage
+## Install
 
-### Swift Package (With Documentation)
+### via Swift Package (With Documentation)
+
 Add the Package to your project, min version `5.5`, See [Apple Documentation](https://developer.apple.com/documentation/swift_packages/adding_package_dependencies_to_your_app).
 
 ```swift
@@ -42,7 +43,7 @@ let package = Package(
 )
 ```
 
-###  CocoaPods
+### via CocoaPods
 
 Install CocoaPods if not already available:
 
@@ -56,43 +57,36 @@ Change to the directory of your Xcode project, and Create and Edit your Podfile 
 ``` bash
 $ cd /path/to/MyProject
 $ touch Podfile
-$ edit Podfile
+## edit Podfile:
 
 platform :ios, '13.0'
 
 target "YOUR APP" do
-pod 'IRLPDFScanContent'
-use_frameworks!
+    pod 'IRLPDFScanContent'
+    use_frameworks!
 end
 ```
 
-## [Getting started](https://irlpdfscancontent.irlmobile.com) 
+### via Carthage
 
-IRLPDFScanContent is a convenient way to use PDFKit in SwiftUI allowing the user to scan multiple pages and creating a PDF for you.
-This tutorial guides you through building adding this functionality to a SwiftUI view. You will learn to build the view and hanlde the user input.
+Install [Carthage](https://github.com/Carthage/Carthage#installing-carthage) if not already available 
 
-Check the documentation (Essentials / Getting Started) here: [Documentation](https://irlpdfscancontent.irlmobile.com/tutorials/tutorial-table-of-contents)
+Change to the directory of your Xcode project, and Create and Edit your Podfile and add IRLPDFScanContent:
 
-#### Make it availble globaly
+``` bash
+$ cd /path/to/MyProject
+$ touch CartFile
+## edit CartFile:
 
-- In your `AppDelegate` or your Module, use `@_exported` for convenience
-```swift
-@_exported import IRLPDFScanContent
+github "charlymr/IRLPDFScanContent" ~> 1.0.1
 ```
 
-### Perfrom a Scan
-
-- Initiate the object with [`init(with:)`](https://irlpdfscancontent.irlmobile.com) (You may pass a delegate (`IRLPDFScanContentProtocol`) or observe changes
-- present you view [`present(animated:completion:)`](https://irlpdfscancontent.irlmobile.com) or [`await present(animated:)`](https://irlpdfscancontent.irlmobile.com) (iOS 15.0+)
-- Observe the result of [`latestScan`](https://irlpdfscancontent.irlmobile.com) or wait for `delegate` if you used the delegate method
-- Generate a PDF using [`generatePDF(with:)`](https://irlpdfscancontent.irlmobile.com) or get images using `scanImages`
-
-``` swift
-let scanner = IRLPDFScanContent(with: self)
-scanner.present(animated: true, completion: nil)
-
-// .... Later stage
-guard let pdfURL = scanner.generatePDF(with: "myscan.pdf") else {
-    return
-}
+Save and run:
+``` bash
+$ carthage update --use-xcframeworks 
 ```
+Drop the Carthage/Build/iOS .framework in your project.
+
+For more details on Cartage and how to use it, check the [Carthage Github](https://github.com/Carthage/Carthage) documentation
+
+

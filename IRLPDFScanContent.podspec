@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "IRLPDFScanContent"
-s.version      = "1.0.0"
+s.version      = "1.0.1"
 s.summary      = "SwiftUI & UKKit - Images or PDF scanner."
 s.description  = "A convenient class usable from `UIKit` view controller or `SwiftUI` to scan document & get `UIImage` or `PDFDocument` as result"
 s.license      = { :type => 'MIT', :file => 'LICENSE' }

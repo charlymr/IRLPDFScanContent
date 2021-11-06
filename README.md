@@ -1,7 +1,8 @@
 # IRLPDFScanContent
 `SwiftUI` & `UKKit` - Images or PDF scanner.
 
-[![🍎 Documentation](https://raw.githubusercontent.com/charlymr/IRLPDFScanContent/main/documentationicon.png)](https://irlpdfscancontent.irlmobile.com/documentation/) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=charlymr_IRLPDFScanContent&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=charlymr_IRLPDFScanContent) [![Version](https://img.shields.io/cocoapods/v/IRLPDFScanContent.svg?style=flat)](http://cocoapods.org/pods/IRLPDFScanContent) [![Platform](https://img.shields.io/cocoapods/p/IRLPDFScanContent.svg?style=flat)](http://cocoapods.org/pods/IRLPDFScanContent)
+[![🍎 Documentation](https://raw.githubusercontent.com/charlymr/IRLPDFScanContent/main/documentationicon.png)](https://irlpdfscancontent.irlmobile.com/documentation/) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=charlymr_IRLPDFScanContent&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=charlymr_IRLPDFScanContent) [![Version](https://img.shields.io/cocoapods/v/IRLPDFScanContent.svg?style=flat)](http://cocoapods.org/pods/IRLPDFScanContent) [![Platform](https://img.shields.io/cocoapods/p/IRLPDFScanContent.svg?style=flat)](http://cocoapods.org/pods/IRLPDFScanContent) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![licence MIT](https://shields.io/badge/license-MIT-%23373737)](https://github.com/charlymr/IRLPDFScanContent/blob/main/LICENSE)
 
 ## Overview
 
@@ -15,9 +16,9 @@ As of iOS 10, you must povide a reason for using the camera in you Info.plist:
 Please add the following to your plist:
 **[NSCameraUsageDescription](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) : We need the camera to scan**
 
-## Usage
+## Install
 
-### via Swift Package Manager
+### via Swift Package (With Documentation)
 
 Add the Package to your project, min version `5.5`, See [Apple Documentation](https://developer.apple.com/documentation/swift_packages/adding_package_dependencies_to_your_app).
 
@@ -58,15 +59,14 @@ Change to the directory of your Xcode project, and Create and Edit your Podfile 
 ``` bash
 $ cd /path/to/MyProject
 $ touch Podfile
-$ edit Podfile
+## edit Podfile:
 
 platform :ios, '13.0'
 
 target "YOUR APP" do
-pod 'IRLPDFScanContent'
-use_frameworks!
+    pod 'IRLPDFScanContent'
+    use_frameworks!
 end
-
 ```
 
 ### via Carthage
@@ -78,7 +78,7 @@ Change to the directory of your Xcode project, and Create and Edit your Podfile 
 ``` bash
 $ cd /path/to/MyProject
 $ touch CartFile
-$ edit CartFile
+## edit CartFile:
 
 github "charlymr/IRLPDFScanContent" ~> 1.0.1
 ```
