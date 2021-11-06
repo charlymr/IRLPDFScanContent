@@ -69,30 +69,6 @@ end
 
 ```
 
-### via Carthage
-
-Install [Carthage](https://github.com/Carthage/Carthage#installing-carthage) if not already available 
-
-Change to the directory of your Xcode project, and Create and Edit your Podfile and add IRLPDFScanContent:
-
-``` bash
-$ cd /path/to/MyProject
-$ touch CartFile
-$ edit CartFile
-
-github "charlymr/IRLPDFScanContent" ~> 1.0.0
-```
-
-Save and run:
-``` bash
-$ carthage update
-```
-Drop the Carthage/Build/iOS .framework in your project.
-
-For more details on Cartage and how to use it, check the [Carthage Github](https://github.com/Carthage/Carthage) documentation
-
-
-
 ## [Getting started](https://irlpdfscancontent.irlmobile.com) 
 
 IRLPDFScanContent is a convenient way to use PDFKit in SwiftUI allowing the user to scan multiple pages and creating a PDF for you.
