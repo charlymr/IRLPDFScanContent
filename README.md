@@ -6,10 +6,13 @@ A convenient class usable from `UIKit` view controller or `SwiftUI` to scan docu
 ## Overview
 
 Use this class in to perform a scan an get images or a PDF as result
+**MINIMUM iOS REQUIREMENT: 13.0**
 
-## Available
+## Application plist requirement
 
-- iOS 13+
+As of iOS 10, you must povide a reason for using the camera in you Info.plist:
+Please add the following to your plist:
+**[NSCameraUsageDescription](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) : We need the camera to scan**
 
 ## Usage
 
@@ -69,6 +72,14 @@ guard let pdfURL = scanner.generatePDF(with: "myscan.pdf") else {
     return
 }
 ```
+
+## Authors
+
+- Denis Martin | Web: [www.irlmobile.com](http://www.irlmobile.com)
+- 
+## Open Source
+
+- Feel free to fork and modify this code. Pull requests are more than welcome!
 
 ## MIT License
 
