@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "IRLFoundation",
+    name: "IRLPDFScanContent",
     platforms: [
        .iOS(.v13)
     ],

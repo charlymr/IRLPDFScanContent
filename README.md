@@ -1,7 +1,7 @@
 # IRLPDFScanContent
 A convenient class usable from `UIKit` view controller or `SwiftUI` to scan document & get `UIImage` or `PDFDocument` as result
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=charlymr_IRLPDFScanContent&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=charlymr_IRLPDFScanContent) [![🍎 Documentation](https://irlpdfscancontent.irlmobile.com/documentationicon.png)](https://irlpdfscancontent.irlmobile.com/documentation/)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=charlymr_IRLPDFScanContent&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=charlymr_IRLPDFScanContent) [![🍎 Documentation](https://raw.githubusercontent.com/charlymr/IRLPDFScanContent/main/documentationicon.png)](https://irlpdfscancontent.irlmobile.com/documentation/)
 
 ## Overview
 
@@ -48,10 +48,10 @@ let package = Package(
 
 ### Perfrom a Scan
 
-- Initiate the object with `init(with:)` (You may pass a delegate (`IRLPDFScanContentProtocol`) or observe changes
-- present you view `present(animated:completion:)` or `await present(animated:)`
-- Observe the result of `latestScan` or wait for `delegate` if you used the delegate method
-- Generate a PDF using `generatePDF(with:)` or get images using `scanImages`
+- Initiate the object with [`init(with:)`](https://irlpdfscancontent.irlmobile.com/documentation/irlpdfscancontent/irlpdfscancontent/init(with:)) (You may pass a delegate (`IRLPDFScanContentProtocol`) or observe changes
+- present you view [`present(animated:completion:)`](https://irlpdfscancontent.irlmobile.com/documentation/irlpdfscancontent/irlpdfscancontent/present(animated:completion:)) or [`await present(animated:)`](https://irlpdfscancontent.irlmobile.com/documentation/irlpdfscancontent/irlpdfscancontent/present(animated:)) (iOS 15.0+)
+- Observe the result of [`latestScan`](https://irlpdfscancontent.irlmobile.com/documentation/irlpdfscancontent/irlpdfscancontent/latestscan)) or wait for `delegate` if you used the delegate method
+- Generate a PDF using [`generatePDF(with:)`](https://irlpdfscancontent.irlmobile.com/documentation/irlpdfscancontent/irlpdfscancontent/generatepdf(with:)) or get images using `scanImages`
 
 ``` swift
 let scanner = IRLPDFScanContent(with: self)

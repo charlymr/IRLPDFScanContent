@@ -50,7 +50,15 @@ public extension IRLVNDocumentCameraScanAdditions where Self: VNDocumentCameraSc
         pdfDocument.write(to: scannedPDF(name: name))
         return scannedPDF(name: name)
     }
-        
+       
+    /// Convenience allowing you to get an ``IRLPDFView`` driectly from [VNDocumentCameraScan](https://developer.apple.com/documentation/visionkit/vndocumentcamerascan)
+    var swiftUIPDFView: IRLPDFView? {
+        guard let url = generatePDF() else {
+            return nil
+        }
+        return IRLPDFView(url: url)
+    }
+    
 }
 
 extension VNDocumentCameraScan: IRLVNDocumentCameraScanAdditions {
