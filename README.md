@@ -101,7 +101,7 @@ Chech the documentation (Essentials / Getting Started) here: [Documentation](htt
 
 ## Authors
 
-- Denis Martin | Web: [www.irlmobile.com](http://www.irlmobile.com)
+- Denis Martin-Bruilot | Web: [www.irlmobile.com](http://www.irlmobile.com) | LinkedIN: [denismartin](https://www.linkedin.com/in/denismartin/)
 
 ## Open Source
 
