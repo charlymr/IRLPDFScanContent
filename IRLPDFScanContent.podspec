@@ -16,7 +16,7 @@ s.license      = { :type => 'MIT', :file => 'LICENSE' }
 
 s.homepage     = "https://github.com/charlymr/IRLPDFScanContent"
 s.authors      = { 'Denis Martin' => 'support@irlmobile.com' }
-s.source       = { :git => 'https://github.com/charlymr/IRLPDFScanContent.git', :branch => 'main', :tag => '1.0.0'}
+s.source       = { :git => 'https://github.com/charlymr/IRLPDFScanContent.git', :branch => 'main', :tag => '1.0.1'}
 
 s.platform     = :ios, '13.0'
 
