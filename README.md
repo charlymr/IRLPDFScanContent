@@ -91,42 +91,18 @@ Drop the Carthage/Build/iOS .framework in your project.
 
 For more details on Cartage and how to use it, check the [Carthage Github](https://github.com/Carthage/Carthage) documentation
 
-
 ## [Getting started](https://irlpdfscancontent.irlmobile.com) 
 
 IRLPDFScanContent is a convenient way to use PDFKit in SwiftUI allowing the user to scan multiple pages and creating a PDF for you.
 This tutorial guides you through building adding this functionality to a SwiftUI view. You will learn to build the view and hanlde the user input.
 
-Chech the documentation (Essentials / Getting Started) here: [Documentation](https://irlpdfscancontent.irlmobile.com/tutorials/tutorial-table-of-contents)
+Chech the documentation (Essentials / Getting Started) here: [Documentation](https://irlpdfscancontent.irlmobile.com)
 
-#### Make it availble globaly
-
-- In your `AppDelegate` or your Module, use `@_exported` for convenience
-```swift
-@_exported import IRLPDFScanContent
-```
-
-### Perfrom a Scan
-
-- Initiate the object with [`init(with:)`](https://irlpdfscancontent.irlmobile.com) (You may pass a delegate (`IRLPDFScanContentProtocol`) or observe changes
-- present you view [`present(animated:completion:)`](https://irlpdfscancontent.irlmobile.com) or [`await present(animated:)`](https://irlpdfscancontent.irlmobile.com) (iOS 15.0+)
-- Observe the result of [`latestScan`](https://irlpdfscancontent.irlmobile.com) or wait for `delegate` if you used the delegate method
-- Generate a PDF using [`generatePDF(with:)`](https://irlpdfscancontent.irlmobile.com) or get images using `scanImages`
-
-``` swift
-let scanner = IRLPDFScanContent(with: self)
-scanner.present(animated: true, completion: nil)
-
-// .... Later stage
-guard let pdfURL = scanner.generatePDF(with: "myscan.pdf") else {
-    return
-}
-```
 
 ## Authors
 
 - Denis Martin | Web: [www.irlmobile.com](http://www.irlmobile.com)
-- 
+
 ## Open Source
 
 - Feel free to fork and modify this code. Pull requests are more than welcome!
