@@ -1,7 +1,7 @@
 # IRLPDFScanContent
 A convenient class usable from `UIKit` view controller or `SwiftUI` to scan document & get `UIImage` or `PDFDocument` as result
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=charlymr_IRLPDFScanContent&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=charlymr_IRLPDFScanContent) 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=charlymr_IRLPDFScanContent&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=charlymr_IRLPDFScanContent) [![🍎 Documentation](https://irlpdfscancontent.irlmobile.com/documentationicon.png)](https://irlpdfscancontent.irlmobile.com/documentation/)
 
 ## Overview
 
