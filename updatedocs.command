@@ -3,6 +3,13 @@
 ### WARNING WORK ONLY with cutom domain.
 ### See https://docs.github.com/articles/using-a-custom-domain-with-github-pages/ for more details
 ###
+### Comit your files, then in the repo, go to Settings / Pages 
+###  - Source should be branch/docs
+###  - Custom domain should be <your custom subdomain>
+###
+### Don't forget to add the CNAME to your DNS zone
+###
+
 export GITHUBNAME=charlymr
 export SCHEME=IRLPDFScanContent
 export CUSTOMDOMAIN=irlpdfscancontent.irlmobile.com
