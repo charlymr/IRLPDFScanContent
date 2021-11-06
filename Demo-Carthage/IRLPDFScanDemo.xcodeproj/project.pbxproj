@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		51957C761A629DEA33ADEFEF /* Pods_IRLPDFScanDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6992577AD2889AFE6A45729C /* Pods_IRLPDFScanDemo.framework */; };
+		615F8EE12737174400580217 /* IRLPDFScanContent.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 615F8EDC2737169C00580217 /* IRLPDFScanContent.xcframework */; };
+		615F8EE22737174400580217 /* IRLPDFScanContent.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 615F8EDC2737169C00580217 /* IRLPDFScanContent.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		618D33812736F30A00853801 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D33802736F30A00853801 /* AppDelegate.swift */; };
 		618D33832736F30A00853801 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D33822736F30A00853801 /* SceneDelegate.swift */; };
 		618D33852736F30A00853801 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D33842736F30A00853801 /* ViewController.swift */; };
@@ -16,7 +17,22 @@
 		618D338D2736F30C00853801 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 618D338B2736F30C00853801 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		615F8EE32737174400580217 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				615F8EE22737174400580217 /* IRLPDFScanContent.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		615F8EDC2737169C00580217 /* IRLPDFScanContent.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = IRLPDFScanContent.xcframework; path = Carthage/Build/IRLPDFScanContent.xcframework; sourceTree = "<group>"; };
 		618D337D2736F30A00853801 /* IRLPDFScanDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IRLPDFScanDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		618D33802736F30A00853801 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		618D33822736F30A00853801 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,9 +41,6 @@
 		618D33892736F30C00853801 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		618D338C2736F30C00853801 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		618D338E2736F30C00853801 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6992577AD2889AFE6A45729C /* Pods_IRLPDFScanDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IRLPDFScanDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA274B063754233A3807A551 /* Pods-IRLPDFScanDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IRLPDFScanDemo.debug.xcconfig"; path = "Target Support Files/Pods-IRLPDFScanDemo/Pods-IRLPDFScanDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		EB0ACB07DE388B66E2EE57DF /* Pods-IRLPDFScanDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IRLPDFScanDemo.release.xcconfig"; path = "Target Support Files/Pods-IRLPDFScanDemo/Pods-IRLPDFScanDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51957C761A629DEA33ADEFEF /* Pods_IRLPDFScanDemo.framework in Frameworks */,
+				615F8EE12737174400580217 /* IRLPDFScanContent.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,7 +60,6 @@
 			children = (
 				618D337F2736F30A00853801 /* IRLPDFScanDemo */,
 				618D337E2736F30A00853801 /* Products */,
-				B07204BC43693DF01E40AE84 /* Pods */,
 				CCB4F3FCFA836269346A5644 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -74,19 +86,10 @@
 			path = IRLPDFScanDemo;
 			sourceTree = "<group>";
 		};
-		B07204BC43693DF01E40AE84 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				EA274B063754233A3807A551 /* Pods-IRLPDFScanDemo.debug.xcconfig */,
-				EB0ACB07DE388B66E2EE57DF /* Pods-IRLPDFScanDemo.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		CCB4F3FCFA836269346A5644 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6992577AD2889AFE6A45729C /* Pods_IRLPDFScanDemo.framework */,
+				615F8EDC2737169C00580217 /* IRLPDFScanContent.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -98,11 +101,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 618D33912736F30C00853801 /* Build configuration list for PBXNativeTarget "IRLPDFScanDemo" */;
 			buildPhases = (
-				59564846441E6D30E0B32FC2 /* [CP] Check Pods Manifest.lock */,
 				618D33792736F30A00853801 /* Sources */,
 				618D337A2736F30A00853801 /* Frameworks */,
 				618D337B2736F30A00853801 /* Resources */,
-				6C304774A99F80482E0B2119 /* [CP] Embed Pods Frameworks */,
+				615F8EE32737174400580217 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,48 +160,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		59564846441E6D30E0B32FC2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-IRLPDFScanDemo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6C304774A99F80482E0B2119 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IRLPDFScanDemo/Pods-IRLPDFScanDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IRLPDFScanDemo/Pods-IRLPDFScanDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IRLPDFScanDemo/Pods-IRLPDFScanDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		618D33792736F30A00853801 /* Sources */ = {
@@ -352,13 +312,12 @@
 		};
 		618D33922736F30C00853801 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA274B063754233A3807A551 /* Pods-IRLPDFScanDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6CHEU74FHQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IRLPDFScanDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -381,13 +340,12 @@
 		};
 		618D33932736F30C00853801 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB0ACB07DE388B66E2EE57DF /* Pods-IRLPDFScanDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 6CHEU74FHQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IRLPDFScanDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

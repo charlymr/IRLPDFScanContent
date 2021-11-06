@@ -80,17 +80,16 @@ $ cd /path/to/MyProject
 $ touch CartFile
 $ edit CartFile
 
-github "charlymr/IRLPDFScanContent" ~> 1.0.0
+github "charlymr/IRLPDFScanContent" ~> 1.0.1
 ```
 
 Save and run:
 ``` bash
-$ carthage update
+$ carthage update --use-xcframeworks 
 ```
 Drop the Carthage/Build/iOS .framework in your project.
 
 For more details on Cartage and how to use it, check the [Carthage Github](https://github.com/Carthage/Carthage) documentation
-
 
 
 ## [Getting started](https://irlpdfscancontent.irlmobile.com) 
