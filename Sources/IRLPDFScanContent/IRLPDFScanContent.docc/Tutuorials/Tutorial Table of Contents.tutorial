@@ -7,6 +7,15 @@
         Check the [Github README](https://github.com/charlymr/IRLPDFScanContent) or `Installation` guide to install the dependency in your project
     }
     
+    @Chapter(name: "IRLScannerViewController: Migration") {
+        If you were using [IRLScannerViewController](https://github.com/charlymr/IRLDocumentScanner), this package support easy migration.
+        
+        @Image(source: scan.jpg, alt: "Scan image fromIRLScannerViewController")
+        
+        @TutorialReference(tutorial: "doc:Migrate-from-IRLScannerViewController") 
+
+    }
+    
     @Chapter(name: "SwiftUI: IRLPDFScanContent & IRLPDFView View") {
         Here you will discover how to build the view for the user to be able to scan.
         
@@ -26,5 +35,5 @@
         @TutorialReference(tutorial: "doc:Delegate-IRLPDFScanContent") 
 
     }
-    
+
 }
