@@ -4,6 +4,8 @@
 ## Overview
 A convenient class usable from `UIKit` view controller or `SwiftUI` to scan document & get `UIImage` or `PDFDocument` as result
 
+- This package can replace [IRLScannerViewController](https://github.com/charlymr/IRLDocumentScanner) which is now very old
+
 - Check it out on [Github](https://github.com/charlymr/IRLPDFScanContent) 
 
 #### To Make it availble globaly in your project
@@ -29,4 +31,27 @@ Check the documentation (Essentials / Getting Started) here: [Documentation](htt
 - <doc:/tutorials/Tutorial-Table-of-Contents>
 - <doc:ClassicalDelegate>
 - <doc:SwiftUI>
+
+### Classes
+
+- ``IRLPDFScanContent/IRLPDFScanContent``
+
+### Protocols
+
+- ``IRLPDFScanContent/IRLPDFScanContentProtocol``
+- ``IRLPDFScanContent/IRLVNDocumentCameraScanAdditions``
+
+### Protocols
+
+- ``IRLPDFScanContent/IRLPDFScanContent``
+
+### Structures
+
+- ``IRLPDFScanContent/IRLPDFView``
+
+### Legacy Migration
+
+- ``IRLPDFScanContent/IRLScannerViewController``
+- ``IRLPDFScanContent/IRLScannerViewControllerDelegate``
+- ``IRLPDFScanContent/IRLScannerViewControllerVNDocumentCameraViewAdditions``
 
