@@ -113,11 +113,10 @@ Drop the Carthage/Build/iOS `.xcframework` in your project.
 
 ## [Getting started](https://irlpdfscancontent.irlmobile.com) 
 
-IRLPDFScanContent is a convenient way to use PDFKit in SwiftUI allowing the user to scan multiple pages and creating a PDF for you.
-This tutorial guides you through building adding this functionality to a SwiftUI view. You will learn to build the view and hanlde the user input.
+IRLPDFScanContent is a convenient way to use PDFKit in SwiftUI allowing the user to scan multiple pages and create a PDF for you.
+This tutorials will guides you through adding this functionality to a SwiftUI view or a UIVIewController. You will learn to build the view and hanlde the user input.
 
-Chech the documentation (Essentials / Getting Started) here: [Documentation](https://irlpdfscancontent.irlmobile.com)
-
+Chech the documentation (Essentials / Getting Started) here: [Documentation](https://irlpdfscancontent.irlmobile.com) for more details.
 
 ## Authors
 
