@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02BF96B9A3344DC9A817AFB5 /* libPods-IRLPDFScanDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 396D1C721C13234B9E210AEC /* libPods-IRLPDFScanDemo.a */; };
 		618D33812736F30A00853801 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D33802736F30A00853801 /* AppDelegate.swift */; };
 		618D33832736F30A00853801 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D33822736F30A00853801 /* SceneDelegate.swift */; };
 		618D33852736F30A00853801 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D33842736F30A00853801 /* ViewController.swift */; };
 		618D33882736F30A00853801 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 618D33862736F30A00853801 /* Main.storyboard */; };
 		618D338A2736F30C00853801 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 618D33892736F30C00853801 /* Assets.xcassets */; };
 		618D338D2736F30C00853801 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 618D338B2736F30C00853801 /* LaunchScreen.storyboard */; };
+		CBA4575473A9311664CC2AF0 /* Pods_IRLPDFScanDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83605BA4EB47EA58212C3E10 /* Pods_IRLPDFScanDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		396D1C721C13234B9E210AEC /* libPods-IRLPDFScanDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IRLPDFScanDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		618D337D2736F30A00853801 /* IRLPDFScanDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IRLPDFScanDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		618D33802736F30A00853801 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		618D33822736F30A00853801 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +25,7 @@
 		618D33892736F30C00853801 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		618D338C2736F30C00853801 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		618D338E2736F30C00853801 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83605BA4EB47EA58212C3E10 /* Pods_IRLPDFScanDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IRLPDFScanDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA274B063754233A3807A551 /* Pods-IRLPDFScanDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IRLPDFScanDemo.debug.xcconfig"; path = "Target Support Files/Pods-IRLPDFScanDemo/Pods-IRLPDFScanDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		EB0ACB07DE388B66E2EE57DF /* Pods-IRLPDFScanDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IRLPDFScanDemo.release.xcconfig"; path = "Target Support Files/Pods-IRLPDFScanDemo/Pods-IRLPDFScanDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -35,7 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02BF96B9A3344DC9A817AFB5 /* libPods-IRLPDFScanDemo.a in Frameworks */,
+				CBA4575473A9311664CC2AF0 /* Pods_IRLPDFScanDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 		CCB4F3FCFA836269346A5644 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				396D1C721C13234B9E210AEC /* libPods-IRLPDFScanDemo.a */,
+				83605BA4EB47EA58212C3E10 /* Pods_IRLPDFScanDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -102,6 +102,7 @@
 				618D33792736F30A00853801 /* Sources */,
 				618D337A2736F30A00853801 /* Frameworks */,
 				618D337B2736F30A00853801 /* Resources */,
+				DA093DCA6F52A296DA3E7073 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -179,6 +180,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA093DCA6F52A296DA3E7073 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IRLPDFScanDemo/Pods-IRLPDFScanDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IRLPDFScanDemo/Pods-IRLPDFScanDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IRLPDFScanDemo/Pods-IRLPDFScanDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
