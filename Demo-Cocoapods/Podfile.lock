@@ -1,0 +1,16 @@
+PODS:
+  - IRLPDFScanContent (1.1.0)
+
+DEPENDENCIES:
+  - IRLPDFScanContent (~> 1.1.0)
+
+SPEC REPOS:
+  trunk:
+    - IRLPDFScanContent
+
+SPEC CHECKSUMS:
+  IRLPDFScanContent: 32fc502c89e783e593e1fc95fe8692e33038691c
+
+PODFILE CHECKSUM: 8bb927d36b2a3f155fa7d40bb083d7a69a75eed1
+
+COCOAPODS: 1.11.2
