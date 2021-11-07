@@ -8,7 +8,7 @@ Here we will see how to use itin `UIKit` within a   `UIViewController`
 
 In a nutshell, the ``IRLPDFScanContent/IRLPDFScanContent`` is independant and will report to the ``IRLPDFScanContent/IRLPDFScanContent/delegate`` any action taken by the user. 
 
-##### Perfrom a Scan
+## Perfrom a Scan
 
 - Initiate the object with ``IRLPDFScanContent/IRLPDFScanContent/init(with:)`` (You may pass a delegate (``IRLPDFScanContent/IRLPDFScanContentProtocol``) or observe changes
 - Present the scan view to the user using ``IRLPDFScanContent/IRLPDFScanContent/present(animated:completion:)

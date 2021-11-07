@@ -8,7 +8,7 @@ In a nutshell, the ``IRLPDFScanContent/IRLPDFScanContent`` is independant and wi
 
 Check the <doc:/tutorials/Tutorial-Table-of-Contents> tutorial for a Step-by-Step integration
 
-### Perfrom a Scan
+## Perfrom a Scan
 
 - Initiate the object with ``IRLPDFScanContent/IRLPDFScanContent/init(with:)``
 - present you view `await` ``IRLPDFScanContent/IRLPDFScanContent/present(animated:)`` (iOS 15.0+)

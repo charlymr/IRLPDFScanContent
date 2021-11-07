@@ -2,9 +2,9 @@
     @Intro(title: "Meet IRLPDFScanContent") {
         ``IRLPDFScanContent/IRLPDFScanContent`` is a convenient way to use `PDFKit` in SwiftUI allowing the user to scan multiple pages and creating a PDF for you.
         
-        This tutorial guides you through building adding this functionality to a SwiftUI view. You will learn to build the view and hanlde the user input.
+        Those tutorial will guides you through migrating/adding this functionality to your app. You will learn to present the scanner and hanlde the user input.
         
-        Check the [Github README](https://github.com/charlymr/IRLPDFScanContent) or `Installation` guide to install the dependency in your project
+        Check the [Github README](https://github.com/charlymr/IRLPDFScanContent) or `Installation` guide to install the dependency to your project
     }
     
     @Chapter(name: "IRLScannerViewController: Migration") {

@@ -87,7 +87,7 @@
             @Step {
                 😁 Finaly, we handle updating our `pdfView` and displaying `Error` if any.
                 
-                🛠 Build & Run! ⚠️ Make sure you run it on a Device! 
+                🛠 Build & Run! ⚠️ Make sure you run it on a Device!  📲
                 @Code(name: "ViewController.swift", file: FINAL-ViewController.swift)
             }
         }

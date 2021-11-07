@@ -2,12 +2,12 @@
     @Intro(title: "From IRLPDFScanContent to IRLPDFScanContent") {
         We will see how we can migrate from [IRLScannerViewController](https://github.com/charlymr/IRLDocumentScanner)
         1. Change your Dependencies ([README](https://github.com/charlymr/IRLPDFScanContent) on github)
-        2. Make sure you add the description for the key `NSCameraUsageDescription` in your `Info.plist`
+        2. Handle the key `NSCameraUsageDescription` in your `Info.plist`
         3. Update the ViewController from Demo app in [IRLScannerViewController](https://github.com/charlymr/IRLDocumentScanner)
         3. Use the new ``IRLPDFScanContent/IRLPDFScanContent`` class
         4. Handle the ``IRLPDFScanContent/IRLPDFScanContent/delegate`` call back
         
-        📚 See also: ``IRLPDFScanContent/IRLPDFScanContent`` &  ``IRLPDFScanContent/IRLPDFScanContentProtocol``
+        📚 See also: ``IRLPDFScanContent/IRLPDFScanContent`` &  ``IRLPDFScanContent/IRLPDFScanContentProtocol`` for more details.
         
         @Image(source: scan.jpg, alt: "Scan image from IRLScannerViewController")
 
@@ -38,11 +38,11 @@
 
     @Section(title: "Convert an Existing ViewController") {
         @ContentAndMedia {            
-            You will need to replace your dependendy
+            You will need to replace your dependendy, for example with Cocoapods:
             
             `pod 'IRLPDFScanContent'` 
 
-            by `pod 'IRLPDFScanContent', '~> 1.1'`
+             `pod 'IRLPDFScanContent', '~> 1.1'`
       
             There are several option, check the [README](https://github.com/charlymr/IRLPDFScanContent) on github
         }
@@ -60,7 +60,7 @@
                 @Code(name: "ViewController.swift", file: Migration-2.swift)
             }
             @Step {
-                🗺 The, we will replace the delegate to ``IRLPDFScanContent/IRLPDFScanContentProtocol``
+                🗺 Now we will replace the delegate to ``IRLPDFScanContent/IRLPDFScanContentProtocol``
                 
                 🧹 Let's clean up unecessary code too, from the Old Delegate
                 @Code(name: "ViewController.swift", file: Migration-3.swift)
@@ -68,11 +68,12 @@
             @Step {
                 ⚠️ The protocol ``IRLPDFScanContent/IRLPDFScanContentProtocol`` require 2 methods, & we don't need to dissmiss the controller anymore.
                 
-                👉 No we need ot get the first image (the new scanner support multiple image if you need)
+                👉 Let's get the first image 
+                ℹ️ The new scanner support multiple images if you need
                 @Code(name: "ViewController.swift", file: Migration-4.swift)
             }
             @Step {
-                💡 Let's extract the 1st image
+                💡 Let's extract the first image
                 
                 👉 We also need to implement the second method to handle `Error`
                 @Code(name: "ViewController.swift", file: Migration-5.swift)
@@ -80,18 +81,18 @@
             @Step {
                 🪄 Let's add our new Scanner
                 
-                💾 We can reuse it, and access it multiple time by simply using a `let` in our class (or struct)
+                💾 We can reuse it, and access it multiple time by simply using a `let` in our class (or struct) it's ready to go!
                 @Code(name: "ViewController.swift", file: Migration-6.swift)
             }
             @Step {
-                👏 Now it's just a matter of presenting it
+                👏 Now it's just a matter of presenting it!
                 
-                👉 Make sure you set the Delegate
+                ⚠️ One last thing, ,ake sure you set the Delegate
 
                 @Code(name: "ViewController.swift", file: Migration-7.swift)
             }
             @Step {                
-                🛠 Build & Run! ⚠️ Make sure you run it on a Device! 
+                🛠 Build & Run! ⚠️ Make sure you run it on a Device! 📲
                 
                 @Code(name: "ViewController.swift", file: Migration-FINAL.swift)
             }

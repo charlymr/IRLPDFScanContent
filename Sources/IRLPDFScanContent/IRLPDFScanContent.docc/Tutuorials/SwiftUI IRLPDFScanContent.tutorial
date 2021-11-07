@@ -3,7 +3,7 @@
         We will see how we can add pdf scanning functionality to a Standard SwiftUI Content View.
         1. Make sure you add the description for the key `NSCameraUsageDescription` in your `Info.plist`
         2. Add the Scanner & PDF View to your content
-        3. Add present the scanner & react on observed value changes
+        3. Present the scanner & react on value changes
         
         📚 See also: ``IRLPDFScanContent/IRLPDFScanContent`` & ``IRLPDFScanContent/IRLPDFView``
     }
@@ -54,22 +54,22 @@
                 @Code(name: "ContentView.swift", file: 3-ContentView.swift)
             }
             @Step {
-                🪟 Now let's use the provided present our Scanner
+                🪟 Now let's use the provided **present(animated:)** from our Scanner
                 
                 📚 ``IRLPDFScanContent/IRLPDFScanContent/present(animated:completion:)``
                 @Code(name: "ContentView.swift", file: 4-ContentView.swift)
             }
             @Step {
-                💡 Now let's wrap our view in a `VStack` 
+                💡 For convenience, we wrap our view in a `VStack` 
                 
-                👉 We want to show the **PDF** or the **Text**
+                👉 Why? Because we want to show the **PDF** or the **Text**
 
                 @Code(name: "ContentView.swift", file: 5-ContentView.swift)
             }
             @Step {
                 😁 Finaly, let's observe the content of ``IRLPDFScanContent/IRLPDFScanContent/latestScan`` and display the PDF when available
                 
-                🛠 Build & Run! ⚠️ Make sure you run it on a Device! 
+                🛠 Build & Run! ⚠️ Make sure you run it on a Device!  📲
                 @Code(name: "ContentView.swift", file: FINAL-ContentView.swift)
             }
         }

@@ -12,10 +12,12 @@ import PDFKit
 ///
 public protocol IRLVNDocumentCameraScanAdditions {
     
-    /// Return an array of [UIImage](https://developer.apple.com/documentation/uikit/uiimage) if the scan was performed and successfull
+    /// [SYNCHRONOUS] Return an array of [UIImage](https://developer.apple.com/documentation/uikit/uiimage) if the scan was performed and successfull
+    ///
+    ///  - Warning: This Method is synchrounous and will block the main thread for large amount of scan
     var scanImages: [UIImage]? { get }
     
-    /// Return an array of [UIImage](https://developer.apple.com/documentation/uikit/uiimage) if the scan was performed and successfull
+    /// [ASYNCHRONOUS] Return an array of [UIImage](https://developer.apple.com/documentation/uikit/uiimage) if the scan was performed and successfull
     ///
     /// Images  will be inserted in the Array on a background threat, you can see the 1st image rigth away, the other will come on the go. When done the completion handler will be call.
     ///
@@ -23,12 +25,18 @@ public protocol IRLVNDocumentCameraScanAdditions {
     ///   - completion:Optional Completion Handler with 1 paramter, an Array of `UIImage` with all the images
     func scanImages(completion: (([UIImage]) -> Void)?) -> [UIImage]
     
-    /// Return the `URL` of a [PDFDocument](https://developer.apple.com/documentation/pdfkit/pdfdocument) if the scan was performed and successfull
+    ///  [SYNCHRONOUS] Return the `URL` of a [PDFDocument](https://developer.apple.com/documentation/pdfkit/pdfdocument) if the scan was performed and successfull
+    ///
+    /// - Warning: This Method is synchrounous and will block the main thread for large amount of scan
+    ///
     /// - Parameters:
     ///   - name: An name for the PDF (default: ``IRLPDFScanContent/IRLPDFScanContent/defaultPDFName``
     func generatePDF(with name: String) -> URL?
     
-    /// Return a [PDFDocument](https://developer.apple.com/documentation/pdfkit/pdfdocument) if the scan was performed and successfull
+    /// [ASYNCHRONOUS] Return a [PDFDocument](https://developer.apple.com/documentation/pdfkit/pdfdocument) if the scan was performed and successfull
+    ///
+    /// PDF pages will be inserted on a background threat, you can see the 1st page rigth away, the other will come on the go. When done the completion handler will be call.
+    ///
     /// - Parameters:
     ///   - name: An name for the PDF (default: ``IRLPDFScanContent/IRLPDFScanContent/defaultPDFName``
     ///   - pdfView: The [ PDFView](https://developer.apple.com/documentation/pdfkit/pdfview) use to display the pdf.
@@ -45,7 +53,9 @@ public extension IRLVNDocumentCameraScanAdditions where Self: VNDocumentCameraSc
         return documentsDirectory.appendingPathComponent(name)
     }
     
-    /// Return an array of [UIImage](https://developer.apple.com/documentation/uikit/uiimage) if the scan was performed and successfull
+    /// [SYNCHRONOUS] Return an array of [UIImage](https://developer.apple.com/documentation/uikit/uiimage) if the scan was performed and successfull
+    ///
+    /// - Warning: This Method is synchrounous and will block the main thread for large amount of scan
     var scanImages: [UIImage]? {
         var images = [UIImage]()
         for i in 0..<self.pageCount {
@@ -54,7 +64,7 @@ public extension IRLVNDocumentCameraScanAdditions where Self: VNDocumentCameraSc
         return images
     }
     
-    /// Return an array of [UIImage](https://developer.apple.com/documentation/uikit/uiimage) if the scan was performed and successfull
+    /// [ASYNCHRONOUS] Return an array of [UIImage](https://developer.apple.com/documentation/uikit/uiimage) if the scan was performed and successfull
     ///
     /// Images  will be inserted in the Array on a background threat, you can see the 1st image rigth away, the other will come on the go. When done the completion handler will be call.
     ///
@@ -78,7 +88,10 @@ public extension IRLVNDocumentCameraScanAdditions where Self: VNDocumentCameraSc
         return images
     }
     
-    /// Return the `URL` of a [PDFDocument](https://developer.apple.com/documentation/pdfkit/pdfdocument) if the scan was performed and successfull
+    ///  [SYNCHRONOUS] Return the `URL` of a [PDFDocument](https://developer.apple.com/documentation/pdfkit/pdfdocument) if the scan was performed and successfull
+    ///
+    /// - Warning: This Method is synchrounous and will block the main thread for large amount of scan
+    ///
     /// - Parameters:
     ///   - name: An name for the PDF (default: ``IRLPDFScanContent/IRLPDFScanContent/defaultPDFName``
     func generatePDF(with name: String = IRLPDFScanContent.defaultPDFName) -> URL? {
@@ -95,7 +108,7 @@ public extension IRLVNDocumentCameraScanAdditions where Self: VNDocumentCameraSc
         return scannedPDF(name: name)
     }
     
-    /// Return a [PDFDocument](https://developer.apple.com/documentation/pdfkit/pdfdocument) if the scan was performed and successfull
+    /// [ASYNCHRONOUS] Return a [PDFDocument](https://developer.apple.com/documentation/pdfkit/pdfdocument) if the scan was performed and successfull
     ///
     /// PDF pages will be inserted on a background threat, you can see the 1st page rigth away, the other will come on the go. When done the completion handler will be call.
     ///
@@ -127,7 +140,7 @@ public extension IRLVNDocumentCameraScanAdditions where Self: VNDocumentCameraSc
         return pdfDocument
     }
 
-    /// Convenience allowing you to get an ``IRLPDFView`` driectly from [VNDocumentCameraScan](https://developer.apple.com/documentation/visionkit/vndocumentcamerascan)
+    /// [ASYNCHRONOUS] Convenience allowing you to get an ``IRLPDFView`` driectly from [VNDocumentCameraScan](https://developer.apple.com/documentation/visionkit/vndocumentcamerascan)
     var swiftUIPDFView: IRLPDFView? {
         let pdfView = PDFView()
         guard let document = generatePDFDocument(pdfView: pdfView) else {

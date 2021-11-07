@@ -8,7 +8,8 @@
 import SwiftUI
 import PDFKit
 
-/// A `SwiftUI` wrapper of [`PDFView`](https://developer.apple.com/documentation/pdfkit/pdfview)
+/// A simple but very efficient `SwiftUI` wrapper of [`PDFView`](https://developer.apple.com/documentation/pdfkit/pdfview)
+///
 public struct IRLPDFView: UIViewRepresentable {
     
     /// The URL of the PDF being display
