@@ -73,22 +73,29 @@ public final class IRLPDFScanContent: NSObject, ObservableObject {
         }
     }
     
-    /// Return an array of [UIImage](https://developer.apple.com/documentation/uikit/uiimage) if the scan was performed and successfull
-    public var scanImages: [UIImage]? {
-        latestScan?.scanImages
-    }
-    
-    /// Return the `URL` of a [PDFDocument](https://developer.apple.com/documentation/pdfkit/pdfdocument) if the scan was performed and successfull
-    /// - Parameters:
-    ///   - name: An name for the PDF (default: ``IRLPDFScanContent/IRLPDFScanContent/defaultPDFName``
-    public func generatePDF(with name: String = IRLPDFScanContent.defaultPDFName) -> URL? {
-        latestScan?.generatePDF(with: name)
-    }
-    
     /// Reset this instance, ``scanImages`` & ``generatePDF(with:)`` will retrun `nil` after you call this method
     public func reset() {
         self.latestScan = nil
         self.errorMessage = nil
     }
     
+}
+
+/// Mark Deprecated Methods
+public extension IRLPDFScanContent {
+    
+    /// Return the `URL` of a [PDFDocument](https://developer.apple.com/documentation/pdfkit/pdfdocument) if the scan was performed and successfull
+    /// - Parameters:
+    ///   - name: An name for the PDF (default: ``IRLPDFScanContent/IRLPDFScanContent/defaultPDFName``
+    @available(*, deprecated, message: "Use the same method on latestScan property directly")
+    func generatePDF(with name: String = IRLPDFScanContent.defaultPDFName) -> URL? {
+        latestScan?.generatePDF(with: name)
+    }
+ 
+    /// Return an array of [UIImage](https://developer.apple.com/documentation/uikit/uiimage) if the scan was performed and successfull
+    @available(*, deprecated, message: "Use the same method on latestScan property directly or the asynchronous equivalent `scanImages(completion:)`")
+    var scanImages: [UIImage]? {
+        latestScan?.scanImages
+    }
+
 }

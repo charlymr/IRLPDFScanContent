@@ -21,5 +21,7 @@ public enum IRLPDFScanContentVersion: String {
 
     /// Patch Versions
     case v1_0_0 = "1.0.0"
-    
+    case v1_0_1 = "1.0.1"
+    case v1_0_2 = "1.0.2"
+
 }

@@ -24,9 +24,9 @@ Check the documentation (Essentials / Getting Started) here: [Documentation](htt
 
 ### Essentials
 
-- <doc:/tutorials/Tutorial-Table-of-Contents>
 - <doc:About>
 - <doc:GettingStarted>
+- <doc:/tutorials/Tutorial-Table-of-Contents>
 - <doc:ClassicalDelegate>
 - <doc:SwiftUI>
 

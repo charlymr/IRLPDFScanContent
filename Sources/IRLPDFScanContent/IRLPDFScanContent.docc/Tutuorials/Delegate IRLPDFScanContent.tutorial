@@ -1,0 +1,95 @@
+@Tutorial(time: 10) {
+    @Intro(title: "Using IRLPDFScanContent with UIKit") {
+        We will see how we can add pdf scanning functionality to a Standard View Controller
+        1. Make sure you add the description for the key `NSCameraUsageDescription` in your `Info.plist`
+        2. Add the Scanner & PDF View to your controller
+        3. Add present the scanner 
+        4. Handle the ``IRLPDFScanContent/IRLPDFScanContent/delegate`` call back
+        
+        📚 See also: ``IRLPDFScanContent/IRLPDFScanContent`` &  ``IRLPDFScanContent/IRLPDFScanContentProtocol``
+    }
+    
+    @Section(title: "Update your Info.plist") {
+        @ContentAndMedia {            
+            To make sure the app can use the camera, we need to allow it to request permission.
+
+        }
+        @Steps {
+            @Step {
+                Open you `Info.plist` or go to `YourProject`/ `YourTarget` / `Info`
+                @Code(name: "Info.plist", file: 00-Info.plist) 
+            }
+            @Step {
+                
+                ⚠️ As of iOS 10, you must povide a reason for using the camera in you Info.plist:
+                Please add the following to your plist:
+                **[NSCameraUsageDescription](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) : Use to scan**
+
+                @Code(name: "Info.plist", file: 01-Info.plist) 
+            }
+        }
+    }
+    
+
+    @Section(title: "Add the scanner capability") {
+        @ContentAndMedia {            
+            Once our Package is available in the project, we will now add the ability to scan a PDF
+        }
+        @Steps {
+            @Step {
+                📱 Let's start with an empty `UIViewController`
+                
+                ✅ Make sure you added the dependency to your project, see **Essentials / Getting Started**  for more details
+                @Code(name: "ViewController.swift", file: 2-ViewController.swift)
+            }
+            @Step {
+                📚 First, `import` ``IRLPDFScanContent`` 
+                
+                @Code(name: "ViewController.swift", file: 3-ViewController.swift)
+            }
+            @Step {
+                🗺 Let's add a `PDFView` as an `@IBOutlet` to our `ViewController`
+                
+                👉 You will need to **wire** the Outlet to your StoryBoard. See [Connecting Objects to Code](https://developer.apple.com/documentation/watchkit/storyboard_support/building_watchos_app_interfaces_using_the_storyboard/connecting_your_user_interface_to_your_code?language=swift)
+                @Code(name: "ViewController.swift", file: 4-ViewController.swift)
+            }
+            @Step {
+                🗺 Let's also add a `UILabel` as an `@IBOutlet`to our `ViewController`, So we can communicate with the User
+                
+                👉 You will need to **wire** the Outlet to your StoryBoard. See [Connecting Objects to Code](https://developer.apple.com/documentation/watchkit/storyboard_support/building_watchos_app_interfaces_using_the_storyboard/connecting_your_user_interface_to_your_code?language=swift)
+                @Code(name: "ViewController.swift", file: 5-ViewController.swift)
+            }
+            @Step {
+                💡 We will want our Text to be in front of our view when Empty. So let's make sure of that! And we want the Action for our Scan.
+                
+                👉  Here we added a simple `UIBarButtonItem` in our storyboard and **wired** it to the `@IBAction`  See [Connecting Objects to Code](https://developer.apple.com/documentation/watchkit/storyboard_support/building_watchos_app_interfaces_using_the_storyboard/connecting_your_user_interface_to_your_code?language=swift)
+                @Code(name: "ViewController.swift", file: 6-ViewController.swift)
+            }
+            @Step {
+                💡 Now let's present the scanner 
+                
+                👉 We want to empty the `pdfView`, reset our `text` when we do that
+
+                @Code(name: "ViewController.swift", file: 7-ViewController.swift)
+            }
+            @Step {
+                💡 To get the Result, we need to declare oursef as a ``IRLPDFScanContent/IRLPDFScanContent/delegate``
+                
+                👉 We shall then conform to ``IRLPDFScanContent/IRLPDFScanContentProtocol``
+
+                @Code(name: "ViewController.swift", file: 8-ViewController.swift)
+            }
+            @Step {
+                ⚠️ Xcode will complain here, as we need to implement at least 2 methods from ``IRLPDFScanContent/IRLPDFScanContentProtocol``
+                
+                @Code(name: "ViewController.swift", file: 9-ViewController.swift)
+            }
+            @Step {
+                😁 Finaly, we handle updating our `pdfView` and displaying `Error` if any.
+                
+                🛠 Build & Run! ⚠️ Make sure you run it on a Device! 
+                @Code(name: "ViewController.swift", file: FINAL-ViewController.swift)
+            }
+        }
+    }
+}

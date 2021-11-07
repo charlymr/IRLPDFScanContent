@@ -4,16 +4,15 @@ import IRLPDFScanContent
 struct ContentView: View {
     
     @ObservedObject var scanner: IRLPDFScanContent = IRLPDFScanContent()
-        
+    
     var body: some View {
         NavigationView {
-            
-            VStack() {
-                Text("Hello World")
-            }
-            .padding()
+            Text("Press the Scan button")
+                .padding()
+                .navigationBarItems(trailing: Button("Scan", action: {
+                    
+                }))
         }
-        
     }
 }
 

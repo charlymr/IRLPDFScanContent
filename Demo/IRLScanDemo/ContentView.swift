@@ -11,29 +11,22 @@ import IRLPDFScanContent
 struct ContentView: View {
     
     @ObservedObject var scanner: IRLPDFScanContent = IRLPDFScanContent()
-    
-    @State var pdfView: IRLPDFView? = nil
-    
+        
     var body: some View {
         NavigationView {
             VStack() {
-                if let pdfView = pdfView {
-                    pdfView
+                 if let latestScan = scanner.latestScan {
+                    latestScan.swiftUIPDFView
+                    
                 } else {
                     Text("Press the Scan button")
                 }
             }
             .padding()
             .navigationBarItems(trailing: Button("Scan", action: {
-                Task {
-                    await scanner.present(animated: true)
-                }
+                scanner.present(animated: true, completion: nil)
             }))
-            .onChange(of: scanner.latestScan) { newValue in
-                pdfView = newValue?.swiftUIPDFView
-            }
         }
-        
     }
 }
 

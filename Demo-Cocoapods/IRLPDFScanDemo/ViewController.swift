@@ -34,12 +34,11 @@ class ViewController: UIViewController {
 extension ViewController: IRLPDFScanContentProtocol {
     
     func scanContent(caller: IRLPDFScanContent, didScan scan: VNDocumentCameraScan) {
-        guard let url = caller.generatePDF() else {
+        guard let document = scan.generatePDFDocument(pdfView: self.pdfView) else {
             return
         }
         view.sendSubviewToBack(text)
-        pdfView.document = PDFDocument(url: url)
-        pdfView.autoScales = true
+        pdfView.document = document
     }
     
     func scanContent(caller: IRLPDFScanContent, didFail error: Error) {

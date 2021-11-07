@@ -4,15 +4,17 @@
 
 ## Overview
 
-This section is more for usage with a classical `UIViewController`
+Here we will see how to use itin `UIKit` within a   `UIViewController`
+
+In a nutshell, the ``IRLPDFScanContent/IRLPDFScanContent`` is independant and will report to the ``IRLPDFScanContent/IRLPDFScanContent/delegate`` any action taken by the user. 
 
 ##### Perfrom a Scan
 
 - Initiate the object with ``IRLPDFScanContent/IRLPDFScanContent/init(with:)`` (You may pass a delegate (``IRLPDFScanContent/IRLPDFScanContentProtocol``) or observe changes
-- present you view ``IRLPDFScanContent/IRLPDFScanContent/present(animated:completion:)
+- Present the scan view to the user using ``IRLPDFScanContent/IRLPDFScanContent/present(animated:completion:)
 - Wait for ``IRLPDFScanContent/IRLPDFScanContent/delegate`` to be call on the method: ``IRLPDFScanContent/IRLPDFScanContentProtocol/scanContent(caller:didScan:)``
 - Generate a PDF using ``IRLPDFScanContent/IRLPDFScanContent/generatePDF(with:)`` and get the URL. (Or get images using ``IRLPDFScanContent/IRLPDFScanContent/scanImages``)
-- Pass it a classical: [`PDFView`](https://developer.apple.com/documentation/pdfkit/pdfview)
+- Pass it to a classical: [`PDFView`](https://developer.apple.com/documentation/pdfkit/pdfview) to display it
 
 ``` swift
 import UIKit
@@ -44,12 +46,11 @@ class ViewController: UIViewController {
 extension ViewController: IRLPDFScanContentProtocol {
     
     func scanContent(caller: IRLPDFScanContent, didScan scan: VNDocumentCameraScan) {
-        guard let url = caller.generatePDF() else {
+        guard let document = scan.generatePDFDocument(pdfView: self.pdfView) else {
             return
         }
         view.sendSubviewToBack(text)
-        pdfView.document = PDFDocument(url: url)
-        pdfView.autoScales = true
+        pdfView.document = document
     }
     
     func scanContent(caller: IRLPDFScanContent, didFail error: Error) {
@@ -58,5 +59,4 @@ extension ViewController: IRLPDFScanContentProtocol {
     }
     
 }
-
 ```

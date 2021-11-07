@@ -6,6 +6,8 @@
 //  Copyright © 2021 Denis Martin-Bruillot. All rights reserved.
 //
 
+import PDFKit
+
 /// A conveniant protocol adding the ability to get [UIImage](https://developer.apple.com/documentation/uikit/uiimage) or [PDFDocument](https://developer.apple.com/documentation/pdfkit/pdfdocument) from a [VNDocumentCameraScan](https://developer.apple.com/documentation/visionkit/vndocumentcamerascan)
 ///
 public protocol IRLVNDocumentCameraScanAdditions {
@@ -13,10 +15,25 @@ public protocol IRLVNDocumentCameraScanAdditions {
     /// Return an array of [UIImage](https://developer.apple.com/documentation/uikit/uiimage) if the scan was performed and successfull
     var scanImages: [UIImage]? { get }
     
+    /// Return an array of [UIImage](https://developer.apple.com/documentation/uikit/uiimage) if the scan was performed and successfull
+    ///
+    /// Images  will be inserted in the Array on a background threat, you can see the 1st image rigth away, the other will come on the go. When done the completion handler will be call.
+    ///
+    /// - Parameters:
+    ///   - completion:Optional Completion Handler with 1 paramter, an Array of `UIImage` with all the images
+    func scanImages(completion: (([UIImage]) -> Void)?) -> [UIImage]
+    
     /// Return the `URL` of a [PDFDocument](https://developer.apple.com/documentation/pdfkit/pdfdocument) if the scan was performed and successfull
     /// - Parameters:
     ///   - name: An name for the PDF (default: ``IRLPDFScanContent/IRLPDFScanContent/defaultPDFName``
     func generatePDF(with name: String) -> URL?
+    
+    /// Return a [PDFDocument](https://developer.apple.com/documentation/pdfkit/pdfdocument) if the scan was performed and successfull
+    /// - Parameters:
+    ///   - name: An name for the PDF (default: ``IRLPDFScanContent/IRLPDFScanContent/defaultPDFName``
+    ///   - pdfView: The [ PDFView](https://developer.apple.com/documentation/pdfkit/pdfview) use to display the pdf.
+    ///   - completion:Optional Completion Handler with 2 paramter, the [ PDFView](https://developer.apple.com/documentation/pdfkit/pdfview) & `URL`) of the PDF
+    func generatePDFDocument(with name: String, pdfView: PDFView?, completion: ((PDFDocument, URL) -> Void)?) -> PDFDocument?
 }
 
 public extension IRLVNDocumentCameraScanAdditions where Self: VNDocumentCameraScan {
@@ -37,10 +54,37 @@ public extension IRLVNDocumentCameraScanAdditions where Self: VNDocumentCameraSc
         return images
     }
     
+    /// Return an array of [UIImage](https://developer.apple.com/documentation/uikit/uiimage) if the scan was performed and successfull
+    ///
+    /// Images  will be inserted in the Array on a background threat, you can see the 1st image rigth away, the other will come on the go. When done the completion handler will be call.
+    ///
+    /// - Parameters:
+    ///   - completion:Optional Completion Handler with 1 paramter, an Array of `UIImage` with all the images
+    func scanImages(completion: (([UIImage]) -> Void)? = nil) -> [UIImage] {
+        guard pageCount > 0 else {
+            return []
+        }
+        var images = [UIImage]()
+        images.append(self.imageOfPage(at: 0))
+        DispatchQueue.global().async {
+            for i in 1..<self.pageCount {
+                let imagePage = self.imageOfPage(at:i)
+                images.append(imagePage)
+            }
+            DispatchQueue.main.async {
+                completion?(images)
+            }
+        }
+        return images
+    }
+    
     /// Return the `URL` of a [PDFDocument](https://developer.apple.com/documentation/pdfkit/pdfdocument) if the scan was performed and successfull
     /// - Parameters:
     ///   - name: An name for the PDF (default: ``IRLPDFScanContent/IRLPDFScanContent/defaultPDFName``
     func generatePDF(with name: String = IRLPDFScanContent.defaultPDFName) -> URL? {
+        guard pageCount > 0 else {
+            return nil
+        }
         let pdfDocument = PDFDocument()
         for i in 0..<self.pageCount {
             let pdfPage = PDFPage(image: self.imageOfPage(at:i))
@@ -50,15 +94,48 @@ public extension IRLVNDocumentCameraScanAdditions where Self: VNDocumentCameraSc
         pdfDocument.write(to: scannedPDF(name: name))
         return scannedPDF(name: name)
     }
-       
-    /// Convenience allowing you to get an ``IRLPDFView`` driectly from [VNDocumentCameraScan](https://developer.apple.com/documentation/visionkit/vndocumentcamerascan)
-    var swiftUIPDFView: IRLPDFView? {
-        guard let url = generatePDF() else {
+    
+    /// Return a [PDFDocument](https://developer.apple.com/documentation/pdfkit/pdfdocument) if the scan was performed and successfull
+    ///
+    /// PDF pages will be inserted on a background threat, you can see the 1st page rigth away, the other will come on the go. When done the completion handler will be call.
+    ///
+    /// - Parameters:
+    ///   - name: An name for the PDF (default: ``IRLPDFScanContent/IRLPDFScanContent/defaultPDFName``
+    ///   - pdfView: The [ PDFView](https://developer.apple.com/documentation/pdfkit/pdfview) use to display the pdf.
+    ///   - completion:Optional Completion Handler with 2 paramter, the [ PDFView](https://developer.apple.com/documentation/pdfkit/pdfview) & `URL`) of the PDF
+    func generatePDFDocument(with name: String = IRLPDFScanContent.defaultPDFName, pdfView: PDFView? = nil, completion: ((PDFDocument, URL) -> Void)? = nil) -> PDFDocument? {
+        guard pageCount > 0 else {
             return nil
         }
-        return IRLPDFView(url: url)
+        let pdfDocument = PDFDocument()
+        let pdfPage = PDFPage(image: self.imageOfPage(at: 0))
+        pdfDocument.insert(pdfPage!, at: 0)
+        pdfView?.autoScales = true
+        DispatchQueue.global().async {
+            for i in 1..<self.pageCount {
+                let pdfPage = PDFPage(image: self.imageOfPage(at: i))
+                DispatchQueue.main.async {
+                    pdfDocument.insert(pdfPage!, at: i)
+                }
+            }
+            try? FileManager.default.removeItem(at: self.scannedPDF(name: name))
+            pdfDocument.write(to: self.scannedPDF(name: name))
+            DispatchQueue.main.async {
+                completion?(pdfDocument, self.scannedPDF(name: name))
+            }
+        }
+        return pdfDocument
     }
-    
+
+    /// Convenience allowing you to get an ``IRLPDFView`` driectly from [VNDocumentCameraScan](https://developer.apple.com/documentation/visionkit/vndocumentcamerascan)
+    var swiftUIPDFView: IRLPDFView? {
+        let pdfView = PDFView()
+        guard let document = generatePDFDocument(pdfView: pdfView) else {
+            return nil
+        }
+        return IRLPDFView(document: document, pdfView: pdfView)
+    }
+
 }
 
 extension VNDocumentCameraScan: IRLVNDocumentCameraScanAdditions {

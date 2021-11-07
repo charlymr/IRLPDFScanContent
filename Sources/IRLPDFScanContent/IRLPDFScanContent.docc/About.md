@@ -4,9 +4,9 @@ This project is Open source. It comes with no warranty or support.
 
 ## Overview
 
-Of course, like any open source project, feel free to fork and modify this code. Pull requests are more than welcome! That is the core of Open source projects!
+Of course, like any open source project, feel free to fork and modify this code. Pull requests are more than welcome! That is the core of Open source projects! You take and give back!
 
-- Warning: Please do not create an issue without first trying to solve it and respect the free time I put on this. I tend to really dislike when I am ordered to fix an issue while the source code is all available & documented. If you need a solution with support & warranties, please check with a vendor not on Github for open source projects.
+- Warning: Please do not create an issue without first trying to solve it and respect the free time I & fellow contributors put on this. I tend to really dislike when I am ordered to fix an issue while the source code is all available & documented. If you need a solution with support & warranties, please check with a vendor not on Github for open source projects.
 
 ### MIT License
 

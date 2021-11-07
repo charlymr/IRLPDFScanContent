@@ -4,7 +4,9 @@
 
 ## Overview
 
-Check the documentation (Essentials / Getting Started) here: [Documentation](https://irlpdfscancontent.irlmobile.com/tutorials/tutorial-table-of-contents)
+In a nutshell, the ``IRLPDFScanContent/IRLPDFScanContent`` is independant and will publish changes to ``IRLPDFScanContent/IRLPDFScanContent/latestScan`` or ``IRLPDFScanContent/IRLPDFScanContent/errorMessage``  
+
+Check the <doc:/tutorials/Tutorial-Table-of-Contents> tutorial for a Step-by-Step integration
 
 ### Perfrom a Scan
 
@@ -18,26 +20,23 @@ import SwiftUI
 import IRLPDFScanContent
 
 struct ContentView: View {
+    
     @ObservedObject var scanner: IRLPDFScanContent = IRLPDFScanContent()
-    @State var pdfView: IRLPDFView? = nil
+        
     var body: some View {
         NavigationView {
             VStack() {
-                if let pdfView = pdfView {
-                    pdfView
+                 if let latestScan = scanner.latestScan {
+                    latestScan.swiftUIPDFView
+                    
                 } else {
                     Text("Press the Scan button")
                 }
             }
             .padding()
             .navigationBarItems(trailing: Button("Scan", action: {
-                Task {
-                    await scanner.present(animated: true)
-                }
+                scanner.present(animated: true, completion: nil)
             }))
-            .onChange(of: scanner.latestScan) { newValue in
-                pdfView = newValue?.swiftUIPDFView
-            }
         }
     }
 }
@@ -47,5 +46,6 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
 ```
 
