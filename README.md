@@ -1,5 +1,5 @@
 # IRLPDFScanContent
-Super easy `SwiftUI` & `UKKit` pakcage to scan: Images or PDF.
+Super easy `SwiftUI` & `UKKit` pakcage to scan: Images or PDF. It is also a replacement for [IRLScannerViewController](https://github.com/charlymr/IRLDocumentScanner) 
 
 [![🍎 Documentation](https://raw.githubusercontent.com/charlymr/IRLPDFScanContent/main/documentationicon.png)](https://irlpdfscancontent.irlmobile.com/documentation/) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=charlymr_IRLPDFScanContent&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=charlymr_IRLPDFScanContent) [![Version](https://img.shields.io/cocoapods/v/IRLPDFScanContent.svg?style=flat)](http://cocoapods.org/pods/IRLPDFScanContent) [![Platform](https://img.shields.io/cocoapods/p/IRLPDFScanContent.svg?style=flat)](http://cocoapods.org/pods/IRLPDFScanContent) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![licence MIT](https://shields.io/badge/license-MIT-%23373737)](https://github.com/charlymr/IRLPDFScanContent/blob/main/LICENSE)
@@ -9,6 +9,16 @@ Super easy `SwiftUI` & `UKKit` pakcage to scan: Images or PDF.
 A convenient class usable from `UIKit` view controller or `SwiftUI` to scan document & get `UIImage` or `PDFDocument` as result
 
 **MINIMUM iOS REQUIREMENT: 13.0**
+
+
+## Migration from [IRLScannerViewController](https://github.com/charlymr/IRLDocumentScanner) 
+Migration from [IRLScannerViewController](https://github.com/charlymr/IRLDocumentScanner) is feasible. Please check the tutorial available in the [documentation](https://irlpdfscancontent.irlmobile.com/documentation/).
+
+#### You project should still work with depreciation warnings
+Follow the [tutorial](https://irlpdfscancontent.irlmobile.com/documentation/) to see how to beneficiate from the new system & remove the depreciation warnings.
+
+One quick note, the new system support multiple scan. In this tutorial we cover how to get 1 scan. It is very straigth forward to get eveything else, check the doc.
+
 
 ## Application plist requirement
 
@@ -41,7 +51,7 @@ let package = Package(
             targets: ["SPMDemo"]),
     ],
     dependencies: [
-       .package(url: "git@github.com:charlymr/IRLPDFScanContent.git", from: "1.0.2"),
+       .package(url: "git@github.com:charlymr/IRLPDFScanContent.git", from: "1.1.0"),
     ],
     targets: [
         .target( name: "SPMDemo",
@@ -101,7 +111,7 @@ $ cd /path/to/MyProject
 $ touch CartFile
 ## edit CartFile:
 
-github "charlymr/IRLPDFScanContent" ~> 1.0.2
+github "charlymr/IRLPDFScanContent" ~> 1.1.0
 ```
 
 #### Prepare

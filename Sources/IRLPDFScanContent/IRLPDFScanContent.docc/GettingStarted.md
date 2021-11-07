@@ -41,7 +41,7 @@ let package = Package(
             targets: ["SPMDemo"]),
     ],
     dependencies: [
-       .package(url: "git@github.com:charlymr/IRLPDFScanContent.git", from: "1.0.2"),
+       .package(url: "git@github.com:charlymr/IRLPDFScanContent.git", from: "1.1.0"),
     ],
     targets: [
         .target( name: "SPMDemo",
@@ -101,7 +101,7 @@ $ cd /path/to/MyProject
 $ touch CartFile
 ## edit CartFile:
 
-github "charlymr/IRLPDFScanContent" ~> 1.0.2
+github "charlymr/IRLPDFScanContent" ~> 1.1.0
 ```
 
 #### Prepare

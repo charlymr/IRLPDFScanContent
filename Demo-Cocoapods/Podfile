@@ -1,6 +1,6 @@
 platform :ios, '13.0'
 
 target "IRLPDFScanDemo" do
-    pod 'IRLPDFScanContent', '~> 1.0.2'
+    pod 'IRLPDFScanContent', '~> 1.1.0'
     use_frameworks!
 end
