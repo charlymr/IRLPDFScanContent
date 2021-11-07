@@ -16,6 +16,9 @@
 		618D33B82737122400853801 /* IRLPDFScanContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D33B02737122300853801 /* IRLPDFScanContent.swift */; };
 		618D33B92737122400853801 /* IRLPDFScanContentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D33B12737122300853801 /* IRLPDFScanContentProtocol.swift */; };
 		618D33BA2737124900853801 /* IRLPDFScanContent.docc in Sources */ = {isa = PBXBuildFile; fileRef = 618D33A92737122300853801 /* IRLPDFScanContent.docc */; };
+		61B8575027382D280044383D /* IRLScannerViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B8574E27382D280044383D /* IRLScannerViewControllerDelegate.swift */; };
+		61B8575127382D280044383D /* IRLScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B8574F27382D280044383D /* IRLScannerViewController.swift */; };
+		61B8575327382D320044383D /* IRLScannerViewControllerDelegation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B8575227382D320044383D /* IRLScannerViewControllerDelegation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		618D33AF2737122300853801 /* VNDocumentCameraScan+IRLPDFScanContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VNDocumentCameraScan+IRLPDFScanContent.swift"; sourceTree = "<group>"; };
 		618D33B02737122300853801 /* IRLPDFScanContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRLPDFScanContent.swift; sourceTree = "<group>"; };
 		618D33B12737122300853801 /* IRLPDFScanContentProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRLPDFScanContentProtocol.swift; sourceTree = "<group>"; };
+		61B8574E27382D280044383D /* IRLScannerViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRLScannerViewControllerDelegate.swift; sourceTree = "<group>"; };
+		61B8574F27382D280044383D /* IRLScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRLScannerViewController.swift; sourceTree = "<group>"; };
+		61B8575227382D320044383D /* IRLScannerViewControllerDelegation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRLScannerViewControllerDelegation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,7 @@
 				618D33A92737122300853801 /* IRLPDFScanContent.docc */,
 				618D33AA2737122300853801 /* IRLPDFScanContent+VNDocumentCameraViewControllerDelegate.swift */,
 				618D33AB2737122300853801 /* IRLPDFView.swift */,
+				61B8574D27382D280044383D /* Legacy */,
 				618D33AC2737122300853801 /* Internal */,
 				618D33AE2737122300853801 /* Exports.swift */,
 				618D33AF2737122300853801 /* VNDocumentCameraScan+IRLPDFScanContent.swift */,
@@ -86,9 +93,19 @@
 		618D33AC2737122300853801 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				61B8575227382D320044383D /* IRLScannerViewControllerDelegation.swift */,
 				618D33AD2737122300853801 /* IRLPDFScanContent+Internal.swift */,
 			);
 			path = Internal;
+			sourceTree = "<group>";
+		};
+		61B8574D27382D280044383D /* Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				61B8574E27382D280044383D /* IRLScannerViewControllerDelegate.swift */,
+				61B8574F27382D280044383D /* IRLScannerViewController.swift */,
+			);
+			path = Legacy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,11 +188,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				618D33B52737122400853801 /* IRLPDFScanContent+Internal.swift in Sources */,
+				61B8575327382D320044383D /* IRLScannerViewControllerDelegation.swift in Sources */,
+				61B8575127382D280044383D /* IRLScannerViewController.swift in Sources */,
 				618D33B42737122400853801 /* IRLPDFView.swift in Sources */,
 				618D33B82737122400853801 /* IRLPDFScanContent.swift in Sources */,
 				618D33B72737122400853801 /* VNDocumentCameraScan+IRLPDFScanContent.swift in Sources */,
 				618D33B92737122400853801 /* IRLPDFScanContentProtocol.swift in Sources */,
 				618D33B32737122400853801 /* IRLPDFScanContent+VNDocumentCameraViewControllerDelegate.swift in Sources */,
+				61B8575027382D280044383D /* IRLScannerViewControllerDelegate.swift in Sources */,
 				618D33BA2737124900853801 /* IRLPDFScanContent.docc in Sources */,
 				618D33B62737122400853801 /* Exports.swift in Sources */,
 			);
