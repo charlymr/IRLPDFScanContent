@@ -128,6 +128,47 @@ This tutorials will guides you through adding this functionality to a SwiftUI vi
 
 Chech the documentation (Essentials / Getting Started) here: [Documentation](https://irlpdfscancontent.irlmobile.com) for more details.
 
+## SwiftUI example
+
+- Initiate the object
+- present you view ``present(animated:)`` 
+- Observe the result of ``latestScan``
+- Use the convenient method ``swiftUIPDFView`` to update your view
+
+``` swift
+import SwiftUI
+import IRLPDFScanContent
+
+struct ContentView: View {
+    
+    @ObservedObject var scanner: IRLPDFScanContent = IRLPDFScanContent()
+        
+    var body: some View {
+        NavigationView {
+            VStack() {
+                 if let latestScan = scanner.latestScan {
+                    latestScan.swiftUIPDFView
+                    
+                } else {
+                    Text("Press the Scan button")
+                }
+            }
+            .padding()
+            .navigationBarItems(trailing: Button("Scan", action: {
+                scanner.present(animated: true, completion: nil)
+            }))
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+
+```
+
 ## Authors
 
 - Denis Martin-Bruilot | Web: [www.irlmobile.com](http://www.irlmobile.com) | LinkedIN: [denismartin](https://www.linkedin.com/in/denismartin/)
