@@ -36,12 +36,11 @@ One quick note, the new system support multiple scan. In this tutorial we cover 
 
 ### Essentials
 
+- <doc:/tutorials/Tutorial-Table-of-Contents>
 - <doc:About>
 - <doc:GettingStarted>
-- <doc:/tutorials/Tutorial-Table-of-Contents>
 - <doc:ClassicalDelegate>
 - <doc:SwiftUI>
-- <doc:Migrate-from-IRLScannerViewController>
 
 ### Classes
 
