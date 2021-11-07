@@ -51,15 +51,11 @@ One quick note, the new system support multiple scan. In this tutorial we cover 
 - ``IRLPDFScanContent/IRLPDFScanContentProtocol``
 - ``IRLPDFScanContent/IRLVNDocumentCameraScanAdditions``
 
-### Protocols
-
-- ``IRLPDFScanContent/IRLPDFScanContent``
-
 ### Structures
 
 - ``IRLPDFScanContent/IRLPDFView``
 
-### Legacy Migration
+### Legacy
 
 - ``IRLPDFScanContent/IRLScannerViewController``
 - ``IRLPDFScanContent/IRLScannerViewControllerDelegate``
