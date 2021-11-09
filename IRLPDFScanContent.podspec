@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/charlymr/IRLPDFScanContent'
   s.documentation_url = 'https://irlpdfscancontent.irlmobile.com/documentation/'
 
-  s.authors = { 'charlymr', 'Denis Martin' => 'support@irlmobile.com' }
+  s.authors = 'charlymr'
   
   s.source = { :git => 'https://github.com/charlymr/IRLPDFScanContent.git', :tag => s.version }
 
