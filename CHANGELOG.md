@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## Unreleased
 
 ### Fixed
+## 1.1.1 - 2022-12-27
+- Fixed a crash happening when presentign the scanner from a backgroudn threat
 
 ## 1.1.0 - 2021-11-08
 - Added the ability to migrate from IRLDocumentScanner
