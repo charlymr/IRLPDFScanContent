@@ -44,21 +44,27 @@ public final class IRLPDFScanContent: NSObject, ObservableObject {
     ///   - completion: The block to execute after the presentation finishes. This block has no return value and takes no parameters. You may specify nil for this parameter.
     public func present(animated flag: Bool, completion: (() -> Void)? = nil) {
         reset()
-
-        let keyWindow = UIApplication.shared.connectedScenes
-                .filter({$0.activationState == .foregroundActive})
-                .map({$0 as? UIWindowScene})
-                .compactMap({$0})
-                .first?.windows
-                .filter({$0.isKeyWindow}).first
-        guard let rootViewController = keyWindow?.rootViewController else {
-            self.delegate?.scanContentDissmissed(caller: self)
-            return
+        DispatchQueue.main.async { [weak self] in
+            guard let weakSelf = self else {
+                completion?()
+                return
+            }
+            let keyWindow = UIApplication.shared.connectedScenes
+                    .filter({$0.activationState == .foregroundActive})
+                    .map({$0 as? UIWindowScene})
+                    .compactMap({$0})
+                    .first?.windows
+                    .filter({$0.isKeyWindow}).first
+            guard  let rootViewController = keyWindow?.rootViewController else {
+                completion?()
+                weakSelf.delegate?.scanContentDissmissed(caller: weakSelf)
+                return
+            }
+            rootViewController.present(weakSelf.getDocumentCameraViewController(), animated: flag, completion: {
+                completion?()
+                weakSelf.delegate?.scanContentDidPresent(caller: weakSelf, in: rootViewController)
+            })
         }
-        rootViewController.present(getDocumentCameraViewController(), animated: flag, completion: {
-            completion?()
-            self.delegate?.scanContentDidPresent(caller: self, in: rootViewController)
-        })
     }
 
     /// Present the default view controller for scanning using `await`
